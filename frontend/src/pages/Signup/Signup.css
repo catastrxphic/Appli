@@ -144,6 +144,15 @@
     cursor:pointer;
   }
   
+  .eye-password2 {
+    position: absolute;
+    top: 54%;
+    right: 6%;
+  }
+  .eye-password2:hover {
+    color: #c12799;
+    cursor:pointer;
+  }
 
 
 .buttonSU{

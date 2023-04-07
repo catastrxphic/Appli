@@ -91,7 +91,7 @@ function Signup() {
             
             <div className="confirm-password">
                     
-                    <i className="eye-password" onClick={togglePasswordVisibility}>{eye2}</i>
+                    <i className="eye-password2" onClick={togglePasswordVisibility}>{eye2}</i>
                     <input name="re-password" autocomplete="off" type={passwordShown ? "text" : "password"} onChange={(e) => {setPassword(e.target.value)}}  required className="re-password"/>
                     <label htmlFor="standard-adornment-password" for="re-password" className="S-label-password2"> 
                       <span class="S-re-content-password"><AiOutlineLock/> Password </span>

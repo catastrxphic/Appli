@@ -21,6 +21,12 @@ function Signup() {
     setPasswordShown(passwordShown ? false :true);
   };
 
+
+  const[rePasswordShown, setRePasswordShown] = useState(false);
+  const togglePasswordVisibility2 = () => {
+    setRePasswordShown(rePasswordShown ? false :true);
+  };
+
   const [Username, setUsername] = useState()
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
@@ -59,15 +65,6 @@ function Signup() {
                 
             </div>
 
-            {/* <div className="Signup-password">
-
-                    <input name="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="S-password" type="password"/>  
-                    <label for="S-password" className="S-label-password">
-                      <span className="S-content-password"><AiOutlineLock/>  Password</span>
-                    </label>
-
-            </div> */}
-
             <div className="Signup-password">
                     
                     <i className="eye-password" onClick={togglePasswordVisibility}>{eye1}</i>
@@ -79,26 +76,17 @@ function Signup() {
 
               </div>
 
-
-            {/* <div className="confirm-password">
-
-                    <input value={Confirm_password} onChange={(e) => setConfirm_Password(e.target.value)} required className="re-password" type="password"/>  
-                    <label for="re-password" className="S-label-password2">
-                      <span className="S-re-content-password"> <AiOutlineLock/>  Confirm Password</span>
-                    </label>
-
-            </div> */}
             
             <div className="confirm-password">
                     
-                    <i className="eye-password2" onClick={togglePasswordVisibility}>{eye2}</i>
-                    <input name="re-password" autocomplete="off" type={passwordShown ? "text" : "password"} onChange={(e) => {setPassword(e.target.value)}}  required className="re-password"/>
+                    <i className="eye-password2" onClick={togglePasswordVisibility2}>{eye2}</i>
+                    <input name="re-password" autocomplete="off" type={rePasswordShown ? "text" : "password"} onChange={(e) => {setPassword(e.target.value)}}  required className="re-password"/>
                     <label htmlFor="standard-adornment-password" for="re-password" className="S-label-password2"> 
                       <span class="S-re-content-password"><AiOutlineLock/> Password </span>
                     </label>
                     
+            </div>
 
-              </div>
             <input disable={isLoading} className="buttonSU" type="submit" value="Sign Up"/>
             {error && <div className="error"> {error}</div>}
             

@@ -370,7 +370,7 @@ function Dashboard() {
             <div className="heading-right-container"> 
               <div className="right" href="/Profile">
                 <div className="initial-container">
-                    <p1 className="profile-initial"> {Username.charAt(0)} </p1>
+                    <p1 className="profile-initial">U</p1>
                 </div>
                 <div className="userInfo" >
                   <p1 className="userN-headingright" >  {Username} </p1>

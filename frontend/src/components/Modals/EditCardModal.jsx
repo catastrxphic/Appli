@@ -3,6 +3,10 @@ import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import moment from "moment" 
 
+const axiosInstance = axios.create({
+	baseURL: process.env.NEXT_PUBLIC_API_URL,
+})
+
 const EditCardModal = ({ closeModal, column, card, User3}) => {
 
   var User2;
@@ -19,7 +23,7 @@ const EditCardModal = ({ closeModal, column, card, User3}) => {
   }
 
 function GETS() {
-  axios.post("/api/cards/GETO", {
+  axiosInstance.post("/api/cards/GETO", {
     user_ID: user_id2,
     cardID: card.id
   }, {
@@ -143,7 +147,7 @@ card.Notes = notes
 
     column.items.forEach(function (arrayItem) {
         if (arrayItem.id === card.id) {
-        axios.patch("/api/cards/", {
+        axiosInstance.patch("/api/cards/", {
           cardID: card.id
         }, {
               headers: {
@@ -176,7 +180,7 @@ card.Notes = notes
     // card.dueDate = dueDate
     // card.notes = notes
    
-    axios.patch("/api/cards/UP", {
+    axiosInstance.patch("/api/cards/UP", {
     companyName: card.name,
     positionTitle: card.role,
     applicationLink: card.link,

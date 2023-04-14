@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 
+const axiosInstance = axios.create({
+	baseURL: process.env.NEXT_PUBLIC_API_URL,
+})
+
 export default function Company() {
     const [cards, setCards] = useState()
     var User;
@@ -14,7 +18,7 @@ export default function Company() {
     }
 
     useEffect(() => {
-        axios.post("/api/cards/T", {
+        axiosInstance.post("/api/cards/T", {
             user_ID: user_id
         })
         .then((response) => {

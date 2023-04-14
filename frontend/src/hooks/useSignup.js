@@ -2,6 +2,10 @@ import { useState } from "react";
 import {useAuthContext} from '../hooks/useAuthContext'
 import axios from "axios";
 
+const axiosInstance = axios.create({
+	baseURL: process.env.NEXT_PUBLIC_API_URL,
+})
+
 export const useSignup = () => {
     const [error, setError] = useState(null)
     const [isLoading, setIsLoading] = useState(null)
@@ -11,7 +15,7 @@ export const useSignup = () => {
         setIsLoading(true)
         setError(null)
 
-axios.post('/api/user/signup', {
+axiosInstance.post('/api/user/signup', {
     Username: Username,
 	email: email,
 	password: password

@@ -24,6 +24,10 @@ let itemsFromBackend2 = []
 let itemsFromBackend3 =[]
 let itemsFromBackend4 = []
 
+const axiosInstance = axios.create({
+	baseURL: process.env.NEXT_PUBLIC_API_URL,
+})
+
 function Company() {
   itemsFromBackend1.length = 0
   itemsFromBackend2.length = 0
@@ -44,7 +48,7 @@ function Company() {
   }
 
   // useEffect(() => {
-      axios.post("/api/cards/GET", {
+      axiosInstance.post("/api/cards/GET", {
         user_ID: user_id
     }, {
       headers: {
@@ -154,7 +158,7 @@ deleteCard()
       token = User.token
     }
 
-    axios.patch("/api/cards/Test", {
+    axiosInstance.patch("/api/cards/Test", {
       columnLocation: local_Card_Name,
       index: destination.index,
       id: result.draggableId  
@@ -182,7 +186,7 @@ deleteCard()
       token = User.token
     }
 
-    axios.patch("/api/cards/Test", {
+    axiosInstance.patch("/api/cards/Test", {
       index: destination.index,
       id: result.draggableId  
     }, {
@@ -320,7 +324,7 @@ function Dashboard() {
     email = User.email
   }
 
-  axios.post("/api/user/look", {
+  axiosInstance.post("/api/user/look", {
     Uid: Id
   })
   .then((response) => {

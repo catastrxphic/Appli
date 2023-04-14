@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 
+const axiosInstance = axios.create({
+	baseURL: process.env.NEXT_PUBLIC_API_URL,
+})
+
 const AddCardModal = ({ closeModal, column, columns, setColumns }) => {
   const [company, setCompany] = useState();
   const [position, setPosition] = useState();
@@ -56,7 +60,7 @@ const AddCardModal = ({ closeModal, column, columns, setColumns }) => {
     });
 
     const token = local_user.token;
-    axios.post(
+    axiosInstance.post(
       "/api/cards",
       {
         companyName: company,

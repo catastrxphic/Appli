@@ -1,4 +1,5 @@
 import "./Carousel.css"
+import CarouselItem from "./CarouselItem"
 import { useState, useEffect } from "react"
 import User1 from "../assets/ellipse16.png"
 import User2 from "../assets/Ellipse17.png"
@@ -7,19 +8,19 @@ function Carousel(){
 
     const cardsCollection = [
         {
-            image: User1,
+            image: {User1},
             name:"Nicole",
             jobTitle:"Lead Designer",
             description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni iste expedita recusandae nihil itaque ipsa? Commodi sint libero fugit dolorem molestiae nostrum quo voluptate possimus, saepe et? Quaerat, impedit labore."
         },
         {
-            image: User2,
+            image: "",
             name:"Rafael",
             jobTitle:"Lead Designer",
             description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni iste expedita recusandae nihil itaque ipsa? Commodi sint libero fugit dolorem molestiae nostrum quo voluptate possimus, saepe et? Quaerat, impedit labore."
         },
         {
-            image: User3,
+            image: "",
             name:"Bruna",
             jobTitle:"Lead Designer",
             description:"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni iste expedita recusandae nihil itaque ipsa? Commodi sint libero fugit dolorem molestiae nostrum quo voluptate possimus, saepe et? Quaerat, impedit labore."
@@ -53,20 +54,14 @@ function Carousel(){
                 }else if (index === updateIndex(activeIndex + 1)){
                     newName = "card-right"
                 }
-                return(
-                    <div className="carousel-cards">
-                        <div className={"card " + newName}>
-                            <div className={"card purple purple-" + newName}></div>
-                            <div className={"card black black-" + newName}></div>
-                            <img className="user-img" src={card.image} alt="" />
-                            <div className="carousel-text">
-                                <h3 className="user-name">{card.name}</h3>
-                                <p className="user-job-title">{card.job}</p>
-                                <p>{card.description}</p>
-                            </div>
-                        </div>
-                    </div>
-                )
+                console.log(activeIndex)
+                return(<CarouselItem
+                    image={card.image} 
+                    name={card.name} 
+                    job={card.jobTitle} 
+                    description={card.description}
+                    class={newName}
+                />)
             })}
         </div>
     )

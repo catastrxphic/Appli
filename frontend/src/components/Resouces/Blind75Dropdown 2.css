@@ -7,10 +7,7 @@
 }
 .blind75-question{
     padding: 15px;
-    cursor: pointer;
 }
-.leetcode-link{
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
+.data-structure-type{
+    /* border-bottom: .6px solid rgb(160, 158, 158); */
 }

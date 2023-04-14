@@ -57,7 +57,7 @@ const AddCardModal = ({ closeModal, column, columns, setColumns }) => {
 
     const token = local_user.token;
     axios.post(
-      "/api/cards",
+      "https://appli.herokuapp.com/api/cards",
       {
         companyName: company,
         positionTitle: position,

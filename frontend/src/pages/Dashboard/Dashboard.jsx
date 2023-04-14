@@ -44,7 +44,7 @@ function Company() {
   }
 
   // useEffect(() => {
-      axios.post("/api/cards/GET", {
+      axios.post("https://appli.herokuapp.com/api/cards/GET", {
         user_ID: user_id
     }, {
       headers: {
@@ -154,7 +154,7 @@ deleteCard()
       token = User.token
     }
 
-    axios.patch("/api/cards/Test", {
+    axios.patch("https://appli.herokuapp.com/api/cards/Test", {
       columnLocation: local_Card_Name,
       index: destination.index,
       id: result.draggableId  
@@ -182,7 +182,7 @@ deleteCard()
       token = User.token
     }
 
-    axios.patch("/api/cards/Test", {
+    axios.patch("https://appli.herokuapp.com/api/cards/Test", {
       index: destination.index,
       id: result.draggableId  
     }, {
@@ -320,7 +320,7 @@ function Dashboard() {
     email = User.email
   }
 
-  axios.post("/api/user/look", {
+  axios.post("https://appli.herokuapp.com/api/user/look", {
     Uid: Id
   })
   .then((response) => {

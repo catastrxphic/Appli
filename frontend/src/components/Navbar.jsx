@@ -8,7 +8,7 @@ function Navbar(prop) {
     <nav className={prop.position}>
       <div className="logo">
         <img src={logo} alt="logo" id="logo" />
-        <img id="letters" src={letters} />
+        <img id="letters" src={letters} alt="logo letters" />
       </div>
 
       <ul>

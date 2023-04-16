@@ -3,15 +3,11 @@ import logo from "../assets/logo-letter.png";
 import letters from "../assets/appli-letters.png";
 import {VscLocation} from "react-icons/vsc";
 import {FiPhone}from "react-icons/fi";
-import {TbMessageChatbot} from "react-icons/tb";
-import {IoShareSocialOutline} from "react-icons/io5";
-import {BsPrinter} from "react-icons/bs";
 import {BsPrinterFill} from "react-icons/bs";
 import {AiFillFacebook, AiOutlineTwitter, AiOutlineGooglePlus} from "react-icons/ai"
 import {FaLinkedinIn, FaInstagram} from "react-icons/fa";
 import {GrYoutube} from "react-icons/gr";
 import {BsPinterest} from "react-icons/bs";
-import {BiWifi2} from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
 
 function Footer() {
@@ -23,7 +19,7 @@ function Footer() {
             <div className="contact-info">
                 <div className="logo footer-logo">
                     <img src={logo} alt="logo" className="logo-img" />
-                    <img id="letters" src={letters} />
+                    <img id="letters" src={letters} alt="logo letters"/>
                 </div>
                 <div className="footer-info">
                     <p className="footer-resources"> <VscLocation className="address-icon"/> 11200 SW 8th St, Miami, FL 33199</p>

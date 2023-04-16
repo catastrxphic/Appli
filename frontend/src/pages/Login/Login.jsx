@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import { React, useState } from "react";
 import "./Login.css";
-import axios from "axios";
 import { useLogin } from "../../hooks/useLogin";
 import { FiMail } from "react-icons/fi";
 import { AiOutlineLock, AiOutlineEye } from "react-icons/ai";
 import { FcGoogle } from "react-icons/fc";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-solid-svg-icons";
 const eye = <FontAwesomeIcon icon={faEye} />;

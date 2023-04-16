@@ -9,13 +9,9 @@ import Signup from "./pages/Signup/Signup";
 import { Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 
-
-
-
-
 function App() {
-  const {user} = useAuthContext();
-  
+  const { user } = useAuthContext();
+
   return (
     <div className="App">
       {/* Router to create different links */}
@@ -23,12 +19,27 @@ function App() {
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/Dashboard" element={user ? <Dashboard/>: <Navigate to="/Login"/>} />
-            <Route path="/Resources" element={user ? <Resources/>: <Navigate to="/Login"/>} />
-            <Route path="/Login" element={!user ? <Login />: <Navigate to="/Dashboard"/>} />
+            <Route
+              path="/Dashboard"
+              element={user ? <Dashboard /> : <Navigate to="/Login" />}
+            />
+            <Route
+              path="/Resources"
+              element={user ? <Resources /> : <Navigate to="/Login" />}
+            />
+            <Route
+              path="/Login"
+              element={!user ? <Login /> : <Navigate to="/Dashboard" />}
+            />
             <Route path="/About" element={<About />} />
-            <Route path="/Jobs" element={user ? <Jobs/>: <Navigate to="/Login"/>} />
-            <Route path="/Signup" element={!user ?  <Signup/>: <Navigate to="/Dashboard"/>} />
+            <Route
+              path="/Jobs"
+              element={user ? <Jobs /> : <Navigate to="/Login" />}
+            />
+            <Route
+              path="/Signup"
+              element={!user ? <Signup /> : <Navigate to="/Dashboard" />}
+            />
           </Routes>
         </div>
       </BrowserRouter>

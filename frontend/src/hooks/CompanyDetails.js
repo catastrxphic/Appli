@@ -14,7 +14,7 @@ export default function Company() {
     }
 
     useEffect(() => {
-        axios.post("https://appli.herokuapp.com/api/cards/T", {
+        axios.post("https://appli-z4ba.onrender.com/api/cards/T", {
             user_ID: user_id
         })
         .then((response) => {

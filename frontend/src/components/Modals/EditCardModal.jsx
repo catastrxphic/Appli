@@ -19,7 +19,7 @@ const EditCardModal = ({ closeModal, column, card, User3}) => {
   }
 
 function GETS() {
-  axios.post("https://appli.herokuapp.com/api/cards/GETO", {
+  axios.post("https://appli-z4ba.onrender.com/api/cards/GETO", {
     user_ID: user_id2,
     cardID: card.id
   }, {
@@ -143,7 +143,7 @@ card.Notes = notes
 
     column.items.forEach(function (arrayItem) {
         if (arrayItem.id === card.id) {
-        axios.patch("https://appli.herokuapp.com/api/cards/", {
+        axios.patch("https://appli-z4ba.onrender.com/api/cards/", {
           cardID: card.id
         }, {
               headers: {
@@ -176,7 +176,7 @@ card.Notes = notes
     // card.dueDate = dueDate
     // card.notes = notes
    
-    axios.patch("https://appli.herokuapp.com/api/cards/UP", {
+    axios.patch("https://appli-z4ba.onrender.com/api/cards/UP", {
     companyName: card.name,
     positionTitle: card.role,
     applicationLink: card.link,
